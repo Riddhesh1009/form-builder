@@ -27,6 +27,9 @@ const ToolBar = ({ customForm, setCustomForm }) => {
         customForm.forEach((element) => {
             htmlForm += `<label>${element.label}: `;
             switch (element.type) {
+                case "button":
+                    htmlForm += `<button>${element.label}</button>`;
+                    break;
                 case 'select':
                     htmlForm += `<select name="${element.label}"><option>Option 1</option><option>Option 2</option></select>`;
                     break;
@@ -49,9 +52,9 @@ const ToolBar = ({ customForm, setCustomForm }) => {
     }
 
     return (
-        <div className='w-full'>
-            <p className='text-sky-50 bg-sky-500 font-semibold p-4 hidden md:block'>Add Form Component</p>
-            <div className='w-full p-2 sm:p-4 flex flex-col gap-2 sm:gap-4 '>
+        <div className='w-full '>
+            <p className='text-primary bg-secondary font-semibold p-4 hidden md:block rounded-lg'>Add Form Component</p>
+            <div className='w-full p-2 sm:p-0 sm:py-4 flex flex-col gap-2 sm:gap-4 '>
                 <Tools handleAdd={handleAdd} type="text" label='Text'>
                     <RiText className='w-full md:w-auto text-xl' />
                 </Tools>
@@ -71,10 +74,10 @@ const ToolBar = ({ customForm, setCustomForm }) => {
                     <MdNumbers className='w-full md:w-auto text-xl' />
                 </Tools>
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-2 px-2 sm:px-4'>
-                <button onClick={() => { generateJson()}}  className='text-sky-50 bg-sky-500 font-semibold p-2 rounded-lg cursor-pointer'>{`[{...}]`}</button>
-                <button onClick={() => { setModalLabel('Are you sure you want to clear the form?') }} className='text-red-500 bg-red-100 font-semibold p-2 rounded-lg cursor-pointer'>Clear</button>
-                <button onClick={() => { generateHTMLForm() }} className='lg:col-span-2 text-green-500 bg-green-100 font-semibold p-2 rounded-lg cursor-pointer'>Html</button>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-2 px-2 sm:px-0'>
+                <button onClick={() => { generateJson() }} className='text-gray-50 bg-primary hover:bg-primary/80 font-semibold p-2 rounded-xl cursor-pointer'>{`[{...}]`}</button>
+                <button onClick={() => { generateHTMLForm() }} className='text-gray-50 bg-primary hover:bg-primary/80 font-semibold p-2 rounded-xl cursor-pointer'>Html</button>
+                <button onClick={() => { setModalLabel('Are you sure you want to clear the form?') }} className='lg:col-span-2 text-red-500 bg-red-100 hover:bg-red-200 duration-300 font-semibold p-2 rounded-xl cursor-pointer'>Clear</button>
             </div>
             {modalLabel != null && <Modal
                 label={modalLabel}

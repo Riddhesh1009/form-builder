@@ -6,9 +6,9 @@ import { FaSave } from "react-icons/fa";
 const CustomComponent = ({ element, updateLabel, deleteElement, index, moveElementDown, moveElementUp, copyElement }) => {
     const [show, setShow] = useState(false);
     return (
-        <div className='w-full flex flex-col p-4 gap-3 bg-yellow-100 border-b border-yellow-400'>
+        <div className='w-full flex flex-col p-4 gap-3 bg-secondary/10 border-b border-secondary'>
             <div className='w-full flex flex-col md:flex-row justify-between md:items-center gap-2'>
-                <label className="text-yellow-700">
+                <label className="text-secondary">
                     {element.type == "button" ? "Button" : element.label}:
                 </label>
                 {show &&
@@ -29,7 +29,7 @@ const CustomComponent = ({ element, updateLabel, deleteElement, index, moveEleme
                 </div>
             </div>
             {element.type == "button" ?
-                <button className='bg-yellow-300 hover:bg-yellow-400 duration-150 p-2 rounded-lg'>{element.label}</button> :
+                <button className='bg-primary hover:bg-primary/80 duration-150 p-2 rounded-lg'>{element.label}</button> :
                 <>
                     {element.type == "select" ?
                         <select name="select1" id="optn" className='border border-gray-300 p-2 rounded-lg'>

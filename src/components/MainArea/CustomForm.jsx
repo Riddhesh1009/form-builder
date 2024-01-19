@@ -46,19 +46,27 @@ const CustomForm = ({ customForm, setCustomForm }) => {
         }
     };
     return (
-        <div className='h-full w-full bg-gray-50 text-gray-700'>
-            {customForm.map((element, index) => (
-                <CustomComponent
-                    key={index}
-                    index={index}
-                    element={element}
-                    updateLabel={updateLabel}
-                    deleteElement={deleteElement}
-                    moveElementDown={moveElementDown}
-                    moveElementUp={moveElementUp}
-                    copyElement={copyElement}
-                />
-            ))}
+        <div className='h-full w-full bg-gray-50 text-gray-700 md:rounded-xl overflow-auto'>
+            {customForm.length > 0 ?
+                <>
+                    {customForm.map((element, index) => (
+                        <CustomComponent
+                            key={index}
+                            index={index}
+                            element={element}
+                            updateLabel={updateLabel}
+                            deleteElement={deleteElement}
+                            moveElementDown={moveElementDown}
+                            moveElementUp={moveElementUp}
+                            copyElement={copyElement}
+                        />
+                    ))}
+                </>
+                :
+                <div className='h-full w-full flex justify-center items-center'>
+                    <p className='text-xl italic text-gray-400'>Add Components from Tool Bar</p>
+                </div>
+            }
         </div>
     )
 }

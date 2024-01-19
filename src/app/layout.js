@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <main className="h-screen w-full flex flex-col">
           <Navbar />
-          <div className="flex-1 bg-white">
+          <div className="flex-1 bg-gray-50">
           {children}
           </div>
         </main>
