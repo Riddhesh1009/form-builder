@@ -7,7 +7,7 @@ export default function Home() {
   const [customForm,setCustomForm] = useState([]);
 
   return (
-    <div className="h-full w-full lg:w-[87%] mx-auto bg-gray-50 flex justify-center items-start pt-[75px] md:pt-[100px] md:pb-10  lg:gap-4">
+    <div className="h-full w-full lg:w-[87%] mx-auto bg-gray-50 flex justify-center items-start pt-[75px] md:pt-[100px] md:pb-10 md:gap-4">
       <div className="w-[77%] md:w-[70%] h-full bg-secondary/40 p-4 md:rounded-2xl">
         <CustomForm customForm={customForm} setCustomForm={setCustomForm}/>
       </div>

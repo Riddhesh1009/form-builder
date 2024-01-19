@@ -64,7 +64,7 @@ const CustomForm = ({ customForm, setCustomForm }) => {
                 </>
                 :
                 <div className='h-full w-full flex justify-center items-center'>
-                    <p className='text-xl italic text-gray-400'>Add Components from Tool Bar</p>
+                    <p className='text-xl italic text-gray-400 text-center whitespace-pre-wrap px-2'>Add Components from Tool Bar</p>
                 </div>
             }
         </div>

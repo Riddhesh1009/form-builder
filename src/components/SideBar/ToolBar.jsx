@@ -54,7 +54,7 @@ const ToolBar = ({ customForm, setCustomForm }) => {
     return (
         <div className='w-full '>
             <p className='text-primary bg-secondary font-semibold p-4 hidden md:block rounded-lg'>Add Form Component</p>
-            <div className='w-full p-2 sm:p-0 sm:py-4 flex flex-col gap-2 sm:gap-4 '>
+            <div className='w-full p-2 md:p-0 md:py-4 flex flex-col gap-2 md:gap-4 '>
                 <Tools handleAdd={handleAdd} type="text" label='Text'>
                     <RiText className='w-full md:w-auto text-xl' />
                 </Tools>
